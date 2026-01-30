@@ -1,5 +1,6 @@
 package edu.cmu.cs.cs214.rec04;
 
+import java.util.Comparator;
 
 /**
  * InheritanceSortedIntList -- a variant of a SortedIntList that keeps
@@ -11,7 +12,26 @@ package edu.cmu.cs.cs214.rec04;
  *
  */
 
-public class InheritanceSortedIntList {
+public class InheritanceSortedIntList extends SortedIntList {
     // Write your implementation below with API documentation
 
+    private int addCount;
+
+    public InheritanceSortedIntList() {
+        super();
+        addCount = 0;
+    }
+
+    public boolean add(int num) {
+        boolean success = super.add(num);
+        if (success) {
+            this.addCount++;
+        }
+        return success;
+    }
+
+    public int getTotalAdded() {
+        return this.addCount;
+    }
+    
 }
