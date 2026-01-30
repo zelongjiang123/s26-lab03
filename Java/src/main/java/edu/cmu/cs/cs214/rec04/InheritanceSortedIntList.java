@@ -15,23 +15,23 @@ import java.util.Comparator;
 public class InheritanceSortedIntList extends SortedIntList {
     // Write your implementation below with API documentation
 
-    private int addCount;
+    private int totalAdded;
 
     public InheritanceSortedIntList() {
         super();
-        addCount = 0;
+        totalAdded = 0;
     }
 
     public boolean add(int num) {
         boolean success = super.add(num);
         if (success) {
-            this.addCount++;
+            this.totalAdded++;
         }
         return success;
     }
 
     public int getTotalAdded() {
-        return this.addCount;
+        return this.totalAdded;
     }
     
 }
